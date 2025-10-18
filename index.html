@@ -1,87 +1,464 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>NAME — Freelance Full‑Stack Developer</title>
-<meta name="description" content="Freelance web developer (PHP · Node.js · React) — building fast, secure web apps." />
-<meta name="author" content="Your Name" />
-<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-<style>
-:root{--accent:#0b84ff;--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--radius:14px}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,#071028 0%, #081224 100%);color:#e6eef6;line-height:1.5}
-.wrap{max-width:980px;margin:36px auto;padding:28px}
-header{display:flex;align-items:center;gap:16px}
-.avatar{width:88px;height:88px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#6fd3ff);display:flex;align-items:center;justify-content:center;color:#012; font-weight:700;font-size:26px}
-h1{margin:0;font-size:26px}
-p.lead{color:var(--muted);margin:8px 0 18px}
-.card{background:rgba(255,255,255,0.03);padding:18px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(2,6,23,0.6)}
-.grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:22px}
-.services{display:flex;gap:8px;flex-wrap:wrap}
-.service{background:rgba(255,255,255,0.02);padding:10px 12px;border-radius:10px;font-size:14px;color:var(--muted)}
-.projects{display:grid;gap:12px;margin-top:14px}
-.proj{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(0,0,0,0.02))}
-.proj-thumb{width:86px;height:54px;border-radius:8px;background:#071127;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
-.proj h4{margin:0;font-size:15px}
-.muted{color:var(--muted);font-size:13px}
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#001827;text-decoration:none;font-weight:600}
-footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
-@media (max-width:860px){.grid{grid-template-columns:1fr} .avatar{width:72px;height:72px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kim — Freelance Full-Stack Developer</title>
+    <meta name="description" content="Freelance web developer specializing in PHP (Laravel, Symfony, WordPress) and modern JavaScript (React, Next.js, Node.js) — building fast, secure web applications.">
+    <meta name="author" content="David Kim">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <style>
+        :root {
+            --accent: #0b84ff;
+            --accent-light: #6fd3ff;
+            --bg: #0f1720;
+            --card: #0b1220;
+            --muted: #9aa4b2;
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(180deg, #071028 0%, #081224 100%);
+            color: #e6eef6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 36px 28px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #001827;
+            font-weight: 700;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            color: var(--accent-light);
+            font-size: 18px;
+            margin: 8px 0 16px;
+            font-weight: 500;
+        }
+        
+        p.lead {
+            color: var(--muted);
+            margin: 8px 0 24px;
+            font-size: 18px;
+            max-width: 600px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.8);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .services {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        
+        .service {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .service:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e6eef6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .tech {
+            background: rgba(11, 132, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--accent-light);
+            border: 1px solid rgba(11, 132, 255, 0.2);
+        }
+        
+        .projects {
+            display: grid;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .proj {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(0, 0, 0, 0.02));
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .proj:hover {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.03));
+            transform: translateX(5px);
+        }
+        
+        .proj-thumb {
+            width: 90px;
+            height: 60px;
+            border-radius: 8px;
+            background: #071127;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .proj h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .muted {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #001827;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e6eef6;
+            transform: translateY(-2px);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 40px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(11, 132, 255, 0.1), rgba(111, 211, 255, 0.05));
+            border: 1px solid rgba(11, 132, 255, 0.2);
+        }
+        
+        .cta-section h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h2, h3 {
+            margin-bottom: 16px;
+            color: #e6eef6;
+        }
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        h3 {
+            font-size: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 16px auto 0;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .btn-container {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .wrap {
+                padding: 24px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .tagline {
+                font-size: 16px;
+            }
+            
+            p.lead {
+                font-size: 16px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .cta-section {
+                padding: 30px 20px;
+            }
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .highlight {
+            color: var(--accent-light);
+        }
+    </style>
 </head>
 <body>
-<main class="wrap">
-<header>
-<div class="avatar">DK</div>
-<div>
-<h1>Hi, I’m <strong>NAME</strong> — Freelance Full‑Stack Developer</h1>
-<p class="lead">I build maintainable, high-performance web apps (PHP · Node.js · React). I help startups and small businesses ship features fast and reliably.</p>
-<div style="display:flex;gap:8px;align-items:center">
-<a class="btn" href="#work">See my work</a>
-<a style="color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)" href="mailto:your.email@example.com">Hire me</a>
-</div>
-</div>
-</header>
+    <main class="wrap">
+        <header>
+            <div class="avatar">DK</div>
+            <div>
+                <h1>Hi, I'm <span class="highlight">Dheerendra Chaurasiya</span></h1>
+                <div class="tagline">Freelance Full-Stack Developer</div>
+                <p class="lead">I build maintainable, high-performance web applications using PHP (Laravel, Symfony, WordPress) and modern JavaScript (React, Next.js, Node.js). I help startups and small businesses ship features fast and reliably.</p>
+                <div class="btn-container">
+                    <a class="btn" href="#work">See My Work</a>
+                    <a class="btn btn-secondary" href="#contact">Hire Me</a>
+                </div>
+            </div>
+        </header>
 
+        <h2 class="section-title">My Expertise</h2>
+        
+        <div class="grid">
+            <!-- LEFT: Services & PHP Expertise -->
+            <section>
+                <div class="card">
+                    <h3>What I Do</h3>
+                    <p class="muted">I specialize in backend APIs, React/Next.js frontends, and fixing legacy PHP applications. Fast delivery, clean code, and clear communication are my priorities.</p>
+                    <div class="services">
+                        <div class="service">API Development (Node.js / Express)</div>
+                        <div class="service">Full-Stack React + PHP</div>
+                        <div class="service">Performance & Security</div>
+                        <div class="service">Maintenance & Optimization</div>
+                        <div class="service">E-commerce Solutions</div>
+                        <div class="service">WordPress Development</div>
+                    </div>
+                </div>
 
-<div class="grid">
-<!-- LEFT: Portfolio & About -->
-<section>
-<div class="card">
-<h3>What I do</h3>
-<p class="muted">I specialize in backend APIs, React admin panels, and fixing legacy PHP apps. Fast delivery, clean code, and clear communication.</p>
-<div style="margin-top:12px" class="services">
-<div class="service">API development (Node.js / Express)</div>
-<div class="service">Full‑stack React + PHP</div>
-<div class="service">Performance & Security</div>
-<div class="service">Maintenance & Optimization</div>
-</div>
-</div>
+                <div class="card" style="margin-top: 24px;">
+                    <h3>PHP Expertise</h3>
+                    <p class="muted">Extensive experience with modern PHP frameworks and CMS platforms:</p>
+                    <div class="tech-stack">
+                        <div class="tech">Laravel</div>
+                        <div class="tech">Symfony</div>
+                        <div class="tech">CodeIgniter</div>
+                        <div class="tech">WordPress</div>
+                        <div class="tech">Custom PHP</div>
+                        <div class="tech">RESTful APIs</div>
+                    </div>
+                </div>
+            </section>
 
+            <!-- RIGHT: JavaScript & Contact -->
+            <section>
+                <div class="card">
+                    <h3>JavaScript & Modern Stack</h3>
+                    <p class="muted">Building responsive, interactive frontends and scalable backends:</p>
+                    <div class="tech-stack">
+                        <div class="tech">React.js</div>
+                        <div class="tech">Next.js</div>
+                        <div class="tech">Node.js</div>
+                        <div class="tech">Express.js</div>
+                        <div class="tech">TypeScript</div>
+                        <div class="tech">Vue.js</div>
+                    </div>
+                </div>
 
-<div id="work" class="card" style="margin-top:12px">
-<h3>Selected projects</h3>
-<div class="projects">
-<article class="proj">
-<div class="proj-thumb">App 1</div>
-<div>
-<h4>Inventory Dashboard — React + Node</h4>
-<div class="muted">Realtime dashboard for a retail chain. Role: Full‑stack dev.</div>
-</div>
-</article>
+                <div class="card" style="margin-top: 24px;">
+                    <h3>Why Work With Me?</h3>
+                    <ul style="color: var(--muted); padding-left: 20px; margin-top: 12px;">
+                        <li style="margin-bottom: 8px;">Clear communication & regular updates</li>
+                        <li style="margin-bottom: 8px;">On-time delivery with quality code</li>
+                        <li style="margin-bottom: 8px;">Technical expertise across multiple stacks</li>
+                        <li style="margin-bottom: 8px;">Problem-solving approach to challenges</li>
+                        <li>Maintenance & support after project completion</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
 
+        <h2 id="work" class="section-title">Selected Projects</h2>
 
-<article class="proj">
-<div class="proj-thumb">Site</div>
-<div>
-<h4>Clinic Website — PHP (Laravel)</h4>
-<div class="muted">Built booking, reports, and admin panel. Role: Backend lead.</div>
-</div>
-</article>
+        <div class="card">
+            <div class="projects">
+                <article class="proj">
+                    <div class="proj-thumb">E-commerce</div>
+                    <div>
+                        <h4>Inventory Dashboard — React + Laravel</h4>
+                        <div class="muted">Realtime dashboard for a retail chain with inventory management, analytics, and reporting. Role: Full-stack developer.</div>
+                    </div>
+                </article>
 
+                <article class="proj">
+                    <div class="proj-thumb">Booking</div>
+                    <div>
+                        <h4>Clinic Management System — Laravel + Vue.js</h4>
+                        <div class="muted">Built appointment booking, patient records, and admin panel with reporting. Role: Backend lead & API development.</div>
+                    </div>
+                </article>
 
-<article class="proj">
-<div class="proj-thumb">API</div>
-<div>
-<h4>Payment Integration — Node.js</h4>
+                <article class="proj">
+                    <div class="proj-thumb">API</div>
+                    <div>
+                        <h4>Payment Integration — Node.js + React</h4>
+                        <div class="muted">Secure payment processing system with multiple gateway support and admin dashboard. Role: Full-stack developer.</div>
+                    </div>
+                </article>
+
+                <article class="proj">
+                    <div class="proj-thumb">WordPress</div>
+                    <div>
+                        <h4>Corporate Website — WordPress Custom Theme</h4>
+                        <div class="muted">Custom WordPress theme with Gutenberg blocks, performance optimization, and SEO enhancements. Role: Full-stack developer.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div id="contact" class="cta-section">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how I can help bring your ideas to life with clean, maintainable code and modern development practices.</p>
+            <div class="btn-container" style="justify-content: center;">
+                <a class="btn" href="mailto:david@example.com">Get in Touch</a>
+                <a class="btn btn-secondary" href="https://github.com/yourusername" target="_blank">View GitHub</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Dheerendra Chaurasiya — Freelance Full-Stack Developer</p>
+            <p style="margin-top: 8px;">PHP (Laravel, Symfony, WordPress) • JavaScript (React, Next.js, Node.js)</p>
+        </footer>
+    </main>
+</body>
 </html>
